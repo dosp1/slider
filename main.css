@@ -1,0 +1,384 @@
+:root{
+  --escred: #E74412;
+}
+
+body {
+  margin: 0;
+  font-family: Helvetica, sans-serif;
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+}
+
+.main {
+  z-index: 1;
+}
+
+a {
+  color: #000;
+}
+
+/* logo */
+div {
+  display: block;
+}
+
+.site-menu .site-logo {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  max-width: 300px;
+  height: 89px;
+  padding-left: 13px;
+}
+
+.col-3 {
+  width: 25%;
+}
+.py1 {
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+}
+.left {
+  float: left;
+}
+
+.s1 {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--escred);
+  display: block;
+  margin-left: 78px;
+}
+
+.s2 {
+  font-size: 23px;
+  font-weight: lighter;
+  color: #444444;
+  display: block;
+  margin-left: 78px;
+  line-height: 22px;
+}
+
+.mt1 {
+  margin-top: .5rem;
+}
+
+/* localisation */
+
+th {
+  padding: 2px 5px;
+}
+
+.local-anim {
+  padding: 2px 5px;
+  transition: transform .2s;
+}
+
+.local-anim:hover {
+  transform: scale(1.2);
+}
+
+.right {
+  float: right;
+}
+
+.localisation {
+  width: 21px;
+  height: 12px;
+  box-shadow: 0px 0px 2px 0.5px grey;
+}
+
+/* header */
+.menu{
+  font-size: 17px;
+}
+
+.header {
+  background-color: #fff;
+  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 3;
+  height: 110px;
+}
+
+.header ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.header li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+}
+
+.header li a:hover,
+.header .menu-btn:hover {
+  text-decoration: underline;
+  animation-name: div-text-hover;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: inherit;
+  animation-timing-function: ease;
+}
+
+@keyframes div-text-hover {
+  0% {
+    color: black;
+  }
+  100% {
+    color: var(--escred);
+  }
+}
+
+.header .logo {
+  display: block;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.header .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+.menu-bar {
+  padding: 30px 0 0 0;
+  height: 60px;
+}
+
+.middle-elem {
+  height: 60px;
+  padding: 0 auto;
+}
+
+.face-elem {
+  padding: 3px 20px;
+}
+
+/* menu icon */
+
+.header .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 23px 40px;
+  position: relative;
+  user-select: none;
+}
+
+.header .menu-icon .navicon {
+  background: var(--escred);
+  display: block;
+  height: 6px;
+  border-radius: 5px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 35px;
+}
+
+.header .menu-icon .navicon:before,
+.header .menu-icon .navicon:after {
+  background: var(--escred);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.header .menu-icon .navicon:before {
+  top: 10px;
+}
+
+.header .menu-icon .navicon:after {
+  top: -10px;
+}
+
+/* menu btn */
+
+.header .menu-btn {
+  display: none;
+}
+
+.header .menu-btn:checked ~ .menu {
+  z-index: 300;
+  background: #fff !important;
+  max-height: 450px;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+.icon-hide{
+  visibility: hidden;
+  display: none;
+  }
+
+/* 48em = 768px */
+
+@media (min-width: 1100px) {
+  .header li {
+    float: left;
+  }
+  .header li a {
+    padding: 16px 14px;
+  }
+  .header .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .header .menu-icon {
+    display: none;
+  }
+
+  .icon-hide {
+    visibility: visible;
+    display: block;
+  }
+}
+
+@media (max-width: 375px) {
+  .header .menu-icon {
+    padding: 23px 20px;
+  }
+}
+
+@media (max-height: 580px) {
+  .header {
+    position: relative;
+  }
+}
+
+/* slider */
+#sliderContainer{
+  background-color: #fff;
+  padding-bottom: 30px;
+}
+
+#chgSection{
+  font-family: "Open Sans", "Helvetica Neue", "Arial";
+  background-color: #fff;
+  padding-bottom: 16px;
+  padding-top: 15px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 13px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #3E8CD2;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.images{
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+  background-size: 50px 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#printers{
+  background-image: url(img/printers.png);
+} 
+
+#imgAbout{
+  background-image: url(img/about.png);
+}
+
+#imgOutsourcing{
+  background-image: url(img/outsource.png);
+}
+
+#pagesApplications{
+  background-image: url(img/pages.png);
+}
+
+#software{
+  background-image: url(img/software.png);
+}
+
+.link{
+  width: 80%;
+  word-wrap: break-word;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.5;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-weight: 600;
+  color: rgb(0, 116, 217);
+  font-family: "Open Sans", "Helvetica Neue", Arial;
+}
+
+.link:hover{
+  text-decoration: underline;
+}
+
+.splide__slide{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.splide{
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: inset 5px 0px 5px -5px rgba(0,0,0,0.2), inset -5px 0px 5px -5px rgba(0,0,0,0.2);
+}
+
+.arrow_img{
+  opacity: 0.7;
+  width: 10px;
+  height: 20px;
+}
+
+#arrow_right{
+  background-image: url('img/arrow-right.png');
+}
+
+#arrow_left{
+  background-image: url('img/arrow-left.png');
+}
